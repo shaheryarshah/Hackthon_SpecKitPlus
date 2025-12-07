@@ -8,13 +8,13 @@ This comprehensive textbook teaches students how to build AI-driven humanoid rob
 
 ## Table of Contents
 
-1. [Foundations of Physical AI](./docs/01-physical-ai/intro.md)
-2. [ROS 2 Basics](./docs/02-ros2-basics/intro.md)
-3. [Simulation Pipelines](./docs/03-simulation/intro.md)
-4. [NVIDIA Isaac Platform](./docs/04-isaac-platform/intro.md)
-5. [Humanoid Robotics Fundamentals](./docs/05-humanoid-robotics/intro.md)
-6. [Vision-Language-Action Robotics](./docs/06-vla-robotics/intro.md)
-7. [Capstone Project](./docs/07-capstone/intro.md)
+1. [Foundations of Physical AI](./01-physical-ai/intro.md)
+2. [ROS 2 Basics](./02-ros2-basics/intro.md)
+3. [Simulation Pipelines](./03-simulation/intro.md)
+4. [NVIDIA Isaac Platform](./04-isaac-platform/intro.md)
+5. [Humanoid Robotics Fundamentals](./05-humanoid-robotics/intro.md)
+6. [Vision-Language-Action Robotics](./06-vla-robotics/intro.md)
+7. [Capstone Project](./07-capstone/intro.md)
 
 ## About this Textbook
 
