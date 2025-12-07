@@ -1,0 +1,21 @@
+# Constitution: Physical AI & Humanoid Robotics Textbook
+
+This file contains the core principles and guidelines for the Physical AI & Humanoid Robotics Textbook project.
+
+## Principles
+
+1. **Technical Accuracy & Engineering Rigor**: All robotics, AI, control theory, or mechanical systems concepts must follow authoritative standards (IEEE, ROS, ISO robotics standards, academic sources). Mathematical models must be verified (dynamics, kinematics, control, simulation).
+
+2. **Clarity for Multidisciplinary Learners**: Written for students with backgrounds in Computer Science, Mechatronics, AI/ML, Electrical/Mechanical Engineering. Explanations must include diagrams, equations, code samples, and step-by-step learning pathways.
+
+3. **Project-Based Learning Orientation**: Every chapter must include hands-on exercises, labs, ROS simulation tasks, or humanoid robotics projects. Physical AI concepts should be demonstrated through experiments (simulated or hardware-based).
+
+4. **AI-Native Book Development**: All text, code, and structure must be created collaboratively using Claude Code + Spec-Kit Plus. Maintain AI-generated traceability for every major section.
+
+5. **Content Standards**: Minimum 10 Chapters covering Foundations of Physical AI, Fundamentals of Humanoid Robotics, Kinematics & Dynamics, Actuators/Sensors/Embodiment, Control Systems, Reinforcement Learning, Vision & Perception, Simulation, Human-Robot Interaction, and Future Directions. Each chapter must contain diagrams, code examples, projects, and summaries.
+
+6. **Citation & Verification Standards**: All factual claims must be traceable to sources with IEEE or APA citation style. Use peer-reviewed or authoritative robotics literature when possible. Minimum 20 citations across the book.
+
+7. **Software & Deployment Standards**: Book must be created with Docusaurus v3, deployed on GitHub Pages. Include table of contents, search, sidebar navigation, auto-generated API/code blocks. Build scripts must run with standard Node.js LTS.
+
+8. **Spec-Kit + Claude Code Workflow**: Each chapter must be generated using clear Spec-Kit prompts. Versioned content via Git. Every major rewrite documented via commit message referencing the spec section.

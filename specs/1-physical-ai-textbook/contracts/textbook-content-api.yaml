@@ -1,0 +1,258 @@
+# Textbook Content API Contract
+
+## Overview
+
+This document defines the API contracts for the Physical AI & Humanoid Robotics textbook content management system. Since the textbook is primarily static content served via Docusaurus, these contracts define the interfaces for content retrieval and navigation.
+
+## Base URL
+
+All endpoints are relative to the deployed Docusaurus site, typically:
+`https://[organization].github.io/physical-ai-textbook/`
+
+## Content Retrieval Endpoints
+
+### Get Chapter by ID
+
+**Endpoint**: `GET /api/chapters/{chapterId}`
+
+**Purpose**: Retrieve the content of a specific chapter
+
+**Parameters**:
+- `chapterId` (path): The unique identifier of the chapter (required)
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "id": "string",
+  "title": "string",
+  "number": "integer",
+  "module": "string",
+  "content": "string (Markdown format)",
+  "learningOutcomes": ["string"],
+  "keyTerms": [
+    {
+      "term": "string",
+      "definition": "string"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "string",
+      "title": "string",
+      "fileName": "string",
+      "filePath": "string",
+      "altText": "string"
+    }
+  ],
+  "codeExamples": [
+    {
+      "id": "string",
+      "title": "string",
+      "description": "string",
+      "language": "string",
+      "code": "string",
+      "expectedOutput": "string"
+    }
+  ],
+  "labExercises": [
+    {
+      "id": "string",
+      "title": "string",
+      "description": "string",
+      "objectives": ["string"],
+      "instructions": "string"
+    }
+  ],
+  "assessmentQuestions": [
+    {
+      "id": "string",
+      "type": "string",
+      "questionText": "string",
+      "answerOptions": ["string"],
+      "correctAnswer": "string",
+      "explanation": "string"
+    }
+  ],
+  "citations": [
+    {
+      "id": "string",
+      "citationText": "string",
+      "referenceNumber": "integer"
+    }
+  ]
+}
+```
+
+**Errors**:
+- 404 Not Found: If the chapter ID does not exist
+
+### Get All Chapters
+
+**Endpoint**: `GET /api/chapters`
+
+**Purpose**: Retrieve a list of all available chapters
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "chapters": [
+    {
+      "id": "string",
+      "title": "string",
+      "number": "integer",
+      "module": "string",
+      "wordCount": "integer",
+      "status": "string"
+    }
+  ]
+}
+```
+
+### Get Chapter List by Module
+
+**Endpoint**: `GET /api/modules/{moduleName}/chapters`
+
+**Purpose**: Retrieve a list of chapters within a specific module
+
+**Parameters**:
+- `moduleName` (path): The name of the module to filter by (required)
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "moduleName": "string",
+  "chapters": [
+    {
+      "id": "string",
+      "title": "string",
+      "number": "integer",
+      "wordCount": "integer",
+      "status": "string"
+    }
+  ]
+}
+```
+
+### Get Textbook Metadata
+
+**Endpoint**: `GET /api/textbook`
+
+**Purpose**: Retrieve metadata about the entire textbook
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "id": "string",
+  "title": "string",
+  "version": "string",
+  "totalWords": "integer",
+  "chapterCount": "integer",
+  "citationCount": "integer",
+  "targetAudience": ["string"],
+  "prerequisites": ["string"],
+  "modules": ["string"],
+  "status": "string",
+  "lastUpdated": "string (ISO 8601 date)"
+}
+```
+
+## Search Endpoints
+
+### Search Content
+
+**Endpoint**: `GET /api/search`
+
+**Purpose**: Search across all textbook content
+
+**Parameters**:
+- `query` (query): The search query string (required)
+- `limit` (query): Maximum number of results to return (optional, default: 10)
+- `offset` (query): Number of results to skip (optional, default: 0)
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "query": "string",
+  "totalResults": "integer",
+  "results": [
+    {
+      "id": "string",
+      "type": "string (chapter|diagram|codeExample|labExercise|assessmentQuestion)",
+      "title": "string",
+      "summary": "string",
+      "relevanceScore": "number",
+      "url": "string"
+    }
+  ]
+}
+```
+
+## Navigation Endpoints
+
+### Get Table of Contents
+
+**Endpoint**: `GET /api/navigation/toc`
+
+**Purpose**: Retrieve the table of contents structure
+
+**Response**:
+- Status: 200 OK
+- Content-Type: application/json
+- Body:
+```
+{
+  "title": "string",
+  "items": [
+    {
+      "id": "string",
+      "title": "string",
+      "level": "integer",
+      "url": "string",
+      "children": [
+        {
+          "id": "string",
+          "title": "string",
+          "level": "integer",
+          "url": "string"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Error Response Format
+
+All error responses follow this format:
+```
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "string"
+  }
+}
+```
+
+## Validation Rules
+
+1. All string fields must be non-empty
+2. IDs must be unique within their entity type
+3. Dates must follow ISO 8601 format
+4. Status fields must be one of: "draft", "in_review", "published"
+5. All numeric fields must be positive where appropriate
