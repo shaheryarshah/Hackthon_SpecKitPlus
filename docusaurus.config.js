@@ -13,10 +13,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://shaheryarshah.github.io', // This will be updated for deployment
+  url: 'https://hackthon-speckitplus.vercel.app', // This will be updated for deployment
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub Pages deployment, it's often '/<project-name>/'
-  baseUrl: '/Hackthon_SpecKitPlus/',
+  // For Vercel deployment, it's often '/'
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
