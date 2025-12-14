@@ -1,0 +1,309 @@
+/* Skip link for accessibility - visually hidden until focused */
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skipLink:focus {
+  top: 6px;
+}
+
+/* Base styling for the HeroSection component */
+.heroSection {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  min-height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add geometric background patterns for futuristic feel */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 1.5%, transparent 2%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 1.5%, transparent 2%),
+    linear-gradient(90deg, transparent 49%, rgba(255, 255, 255, 0.08) 50%, transparent 51%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add neon glow effects */
+.heroSection::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(100, 150, 255, 0.3) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add geometric elements to content */
+.heroContent::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(100, 150, 255, 0.3);
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+/* Container for the content */
+.heroContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Content section */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 4;
+}
+
+/* Logo styles */
+.logoContainer {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.heroLogo {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(100, 150, 255, 0.7));
+}
+
+/* Title styles */
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
+}
+
+/* Subtitle styles */
+.heroSubtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* CTA Button styles */
+.heroCtaButton {
+  display: inline-block;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+}
+
+.heroCtaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+/* Default theme styles */
+.default {
+  /* This is the default theme class */
+}
+
+/* Futuristic theme styles */
+.futuristic-glassmorphism {
+  background: transparent;
+  position: relative;
+  border-radius: 20px;
+}
+
+.futuristic-glassmorphism::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  z-index: 1;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Add text shadow for better readability and WCAG compliance */
+.heroTitle,
+.heroSubtitle {
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 5px rgba(100, 150, 255, 0.7),
+    0 0 10px rgba(100, 150, 255, 0.5);
+}
+
+/* Animation styles */
+.animated {
+  animation: floatAndGlow 6s ease-in-out infinite;
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAndGlow {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 117, 252, 0.6);
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+  }
+}
+
+/* Subtle pulsing animation for the logo */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 150, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(100, 150, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 150, 255, 0);
+  }
+}
+
+.pulseEffect {
+  animation: pulse 2s infinite;
+}
+
+/* Navigation links styles */
+.navLinksContainer {
+  margin-top: 1.5rem;
+}
+
+.navLinksList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navLinkItem {
+  display: inline-block;
+  margin: 0;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.navLink:focus {
+  outline: 2px solid #64f6a8;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroLogo {
+    max-width: 150px;
+  }
+
+  .navLinksList {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Adjust geometric elements for smaller screens */
+  .heroContent::after {
+    display: none; /* Hide geometric element on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSection {
+    padding: 1.5rem 1rem;
+    min-height: 40vh;
+  }
+}
