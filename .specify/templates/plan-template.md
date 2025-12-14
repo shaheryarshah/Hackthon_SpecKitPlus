@@ -31,7 +31,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] Faithful Grounding: System must be grounded strictly in the book corpus
+- [ ] Selectable-Context Fidelity: Responses constrained to user selections only
+- [ ] Citations-First UX: Every answer must include inline citations
+- [ ] Low-Latency & Reliability: Sub-2s p95 for retrieval + generation
+- [ ] Security by Default: No secrets on client-side
+- [ ] Non-Destructive Integration: No disruption to existing book content
+- [ ] Retrieval Standards: Must use semantic + structural signals
+- [ ] Indexing Standards: Deterministic chunking with stable IDs
+- [ ] Observability Standards: Request tracing and hit-rate metrics
 
 ## Project Structure
 

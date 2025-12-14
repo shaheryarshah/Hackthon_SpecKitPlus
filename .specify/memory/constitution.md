@@ -1,46 +1,49 @@
 <!--
 Sync Impact Report:
-Version change: n/a → 1.0.0
-Added sections: Technical Accuracy & Engineering Rigor, Clarity for Multidisciplinary Learners, Project-Based Learning Orientation, AI-Native Book Development, Content Standards, Citation & Verification Standards, Software & Deployment Standards, Spec-Kit + Claude Code Workflow
-Removed sections: none
+Version change: 1.0.0 → 1.1.0
+Added sections: Faithful Grounding, Selectable-Context Fidelity, Citations-First UX, Low-Latency & Reliability, Security by Default, Non-Destructive Integration, Retrieval Standards, Indexing Standards, Observability Standards
+Removed sections: Technical Accuracy & Engineering Rigor, Clarity for Multidisciplinary Learners, Project-Based Learning Orientation, AI-Native Book Development, Content Standards, Citation & Verification Standards, Software & Deployment Standards, Spec-Kit + Claude Code Workflow
 Modified principles: none
 Templates requiring updates:
-  - .specify/templates/plan-template.md ⚠ pending (need to ensure Constitution Check aligns with updated principles)
-  - .specify/templates/spec-template.md ⚠ pending (need to ensure requirements align with new principles)
-  - .specify/templates/tasks-template.md ⚠ pending (need to ensure task categorization reflects new principles)
-  - QWEN.md ⚠ pending (may need to reference the new project constitution in the Code Standards section)
+  - .specify/templates/plan-template.md ✅ updated
+  - .specify/templates/spec-template.md ✅ updated
+  - .specify/templates/tasks-template.md ✅ updated
+  - QWEN.md ✅ updated
 Follow-up TODOs: none
 -->
 
-# Textbook for Physical AI & Humanoid Robotics Constitution
+# Integrated RAG Chatbot for Physical AI & Humanoid Robotics Constitution
 
 ## Core Principles
 
-### Technical Accuracy & Engineering Rigor
-Every robotics, AI, control theory, or mechanical systems concept must follow authoritative standards (IEEE, ROS, ISO robotics standards, academic sources). Mathematical models must be verified (dynamics, kinematics, control, simulation).
+### Faithful Grounding
+Answers must be grounded strictly in the book corpus unless explicitly permitted (e.g., UX/system messages). The system MUST NOT hallucinate facts or generate content outside the provided source material.
 
-### Clarity for Multidisciplinary Learners
-Written for students with backgrounds in Computer Science, Mechatronics, AI/ML, Electrical/Mechanical Engineering. Explanations must include diagrams, equations, code samples, and step-by-step learning pathways.
+### Selectable-Context Fidelity
+When a user selects text, responses are constrained to that selection only. The system MUST never leak content outside the selected span in selection-only mode.
 
-### Project-Based Learning Orientation
-Every chapter must include hands-on exercises, labs, ROS simulation tasks, or humanoid robotics projects. Physical AI concepts should be demonstrated through experiments (simulated or hardware-based).
+### Citations-First UX
+Every answer includes inline citations (section/page/anchor) back to the book. The system MUST provide clickable anchors or references that link directly to the source material.
 
-### AI-Native Book Development
-All text, code, and structure must be created collaboratively using Claude Code + Spec-Kit Plus. Maintain AI-generated traceability for every major section.
+### Low-Latency & Reliability
+Sub-2s p95 for retrieval + generation under normal load. The system MUST maintain performance standards without degrading user experience.
 
-### Content Standards
-Minimum 10 Chapters covering Foundations of Physical AI, Fundamentals of Humanoid Robotics, Kinematics & Dynamics, Actuators/Sensors/Embodiment, Control Systems, Reinforcement Learning, Vision & Perception, Simulation, Human-Robot Interaction, and Future Directions. Each chapter must contain diagrams, code examples, projects, and summaries.
+### Security by Default
+No secrets in client; least-privilege access; rotation-ready. All sensitive credentials and API keys MUST be stored server-side with proper access controls.
 
-### Citation & Verification Standards
-All factual claims must be traceable to sources with IEEE or APA citation style. Use peer-reviewed or authoritative robotics literature when possible. Minimum 20 citations across the book.
+### Non-Destructive Integration
+Existing book content, routing, SEO, and assets remain unchanged. The RAG system MUST integrate seamlessly without disrupting current functionality.
 
-## Software & Deployment Standards
-Book must be created with Docusaurus v3, deployed on GitHub Pages. Include table of contents, search, sidebar navigation, auto-generated API/code blocks. Build scripts must run with standard Node.js LTS.
+### Retrieval Standards
+Retrieval uses semantic + structural signals (headings, sections, anchors). The system MUST utilize both vector embeddings and document structure for accurate results.
 
-## Spec-Kit + Claude Code Workflow
-Each chapter must be generated using clear Spec-Kit prompts. Versioned content via Git. Every major rewrite documented via commit message referencing the spec section.
+### Indexing Standards
+Deterministic chunking with stable IDs for re-indexing. Versioned indexes aligned to book releases. The system MUST maintain consistent and reproducible indexing.
+
+### Observability Standards
+Request tracing, retrieval hit-rate, citation coverage. The system MUST provide comprehensive logging and monitoring for all user interactions and RAG operations.
 
 ## Governance
-Content must adhere to all listed constraints (word count, file structure, media requirements, zero-tolerance plagiarism). Success criteria include technical accuracy, pedagogical quality, Spec & AI compliance, and deployment success.
+Any amendments to these principles require team consensus and must maintain backward compatibility where possible. Versioning follows semantic versioning (MAJOR.MINOR.PATCH): MAJOR for breaking changes, MINOR for new principles, PATCH for clarifications. Compliance will be verified through automated tests covering all core principles.
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-05 | **Last Amended**: 2025-12-05
+**Version**: 1.1.0 | **Ratified**: 2025-12-05 | **Last Amended**: 2025-12-14

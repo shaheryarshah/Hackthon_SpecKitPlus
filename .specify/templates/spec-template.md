@@ -84,16 +84,18 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001**: System MUST ground answers strictly in the book corpus without hallucination
+- **FR-002**: System MUST constrain responses to user-selected text spans only when in selection mode
+- **FR-003**: System MUST provide inline citations (section/page/anchor) for all answers
+- **FR-004**: System MUST maintain sub-2s p95 latency for retrieval + generation under normal load
+- **FR-005**: System MUST use semantic + structural signals (headings, sections, anchors) for retrieval
+- **FR-006**: System MUST implement deterministic chunking with stable IDs for re-indexing
+- **FR-007**: System MUST maintain versioned indexes aligned to book releases
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-008**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
+- **FR-009**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
 ### Key Entities *(include if feature involves data)*
 

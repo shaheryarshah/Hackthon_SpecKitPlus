@@ -207,4 +207,4 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 - `.specify/` — SpecKit Plus templates and scripts
 
 ## Code Standards
-See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+Refer to `.specify/memory/constitution.md` for the core principles governing this Integrated RAG Chatbot for Physical AI & Humanoid Robotics project, including faithful grounding, selectable-context fidelity, citations-first UX, low-latency reliability, security by default, and non-destructive integration requirements.

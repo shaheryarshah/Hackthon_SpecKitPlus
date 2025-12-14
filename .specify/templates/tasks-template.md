@@ -62,12 +62,14 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T004 Setup database schema and migrations framework for metadata storage
+- [ ] T005 [P] Implement security framework with secrets stored server-side only
+- [ ] T006 [P] Setup FastAPI routing and middleware structure for RAG orchestration
+- [ ] T007 Create base models for book content, chunks, and citation references
+- [ ] T008 Configure error handling and logging infrastructure with observability
+- [ ] T009 Setup environment configuration management with client/server separation
+- [ ] T010 [P] Integrate Qdrant vector store connection and authentication
+- [ ] T011 [P] Connect to Neon Serverless Postgres for session and feedback data
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

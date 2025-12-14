@@ -75,6 +75,11 @@ const config = {
             label: 'Textbook',
           },
           {
+            position: 'right',
+            label: 'Ask Book',
+            to: '/ask-book',
+          },
+          {
             href: 'https://github.com/shaheryarshah/Hackthon_SpecKitPlus',
             label: 'GitHub',
             position: 'right',

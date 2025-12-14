@@ -1,0 +1,57 @@
+{
+  "name": "rag-chatbot-frontend",
+  "version": "0.1.0",
+  "description": "Frontend for RAG Chatbot Integration with Physical AI & Humanoid Robotics Book",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docusaurus start",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\""
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.0.0",
+    "@docusaurus/preset-classic": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-chat-elements": "^12.0.5",
+    "chatkit-advanced-react": "^1.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.0.0",
+    "@docusaurus/types": "^3.0.0",
+    "@docusaurus/eslint-plugin": "^3.0.0",
+    "@docusaurus/prettier-config": "^3.0.0",
+    "@docusaurus/tsconfig": "^3.0.0",
+    "@docusaurus/types": "^3.0.0",
+    "@types/react": "^18.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
